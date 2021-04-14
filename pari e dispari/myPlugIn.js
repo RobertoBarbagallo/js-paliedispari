@@ -1,74 +1,79 @@
-
-function verifica(decisione) {
-
-    var condizione = false
-
-    if (decisione === "pari" || decisione === "dispari"); {
-        condizione = true;
-    }
-    return condizione
+//VERIFICA SE IL TESTO INSERITO CORRISPONDE A "PARI" O "DISPARI"
+function verifica(testo) {
+    var corrispondenza = false
+    if (testo === "pari" || testo === "dispari") {
+        corrispondenza = true
+    } 
+    return corrispondenza
 }
 
-console.log("primo controllo: ", (verifica(decisione)))
-
+//ESEGUE UN CICLO FINCHE' NON SCRIVO PARI O DISPARI
 do {
     var decisione = prompt("Decidi se vuoi i pari o dispari");
 
 } while (!verifica(decisione))
 
+console.log("primo controllo: ", (verifica(decisione)))
+console.log(decisione)
+
+//VERIFICA SE UN NUMERO E' COMPRESO TRA 1 E 5
 
 function verificaDue(numeroUtente) {
-
-    var condizioneDue = false
     numeroUtente = parseInt(numeroUtente);
+    var compreso = false
 
-    if (1 <= numeroUtente <= 5) {
-        condizioneDue = true;
-    }
-    return condizioneDue
+    if (numeroUtente>=1 && numeroUtente<= 5) {
+        compreso = true
+    } 
+    return compreso
 }
-
+//ESEGUE UN CICLO FINCHE' NON INSERISCO UN  NUMERO TRA 1 E 5
 do {
-    var numeroUtente = prompt("inserisci un  numero tra 1 e 5");
+    var inserimenntoUtente = prompt("Inserisci un  numero tra 1 e 5");
 
-} while (!verificaDue(numeroUtente));
+} while (!verificaDue(inserimenntoUtente));
 
-console.log("secondo controllo: ", (verificaDue(numeroUtente)));
+console.log("secondo controllo: ", (verificaDue(inserimenntoUtente)));
 
-numeroUtente = parseInt(numeroUtente);
+//CONVERTE L'INSERIMENTO IN NUMERO REALE
+inserimentoUtente = parseInt(inserimenntoUtente);
+console.log("il nmumero inserito è: ", inserimenntoUtente)
 
+//GENERA NUMERO RANDOM INTELLIGENZA ARTIFICIALE
 var numeroAI = parseInt((Math.random() * 5) + 1);
 
-console.log(numeroAI)
+console.log("il numero genarto è: ", numeroAI)
 
+//SOMMA DI VALORI NUMERICI
+var somma = numeroAI + inserimentoUtente
 
-
-var somma = numeroAI + numeroUtente
-
-function verificaTre(somma) {
+//VERIFICA SE UN NUMERO E' PARI
+function verificaTre(sePari) {
 
     var pari = false
-    if (somma % 2 === 0) {
+    if (sePari % 2 === 0) {
         pari = true
     }
     return pari
 }
 
-console.log("Il numero è pari: ", (verificaTre(somma)));
-
-var risultato
+console.log("Il risultato della somma è pari: ", (verificaTre(somma)));
 
 
-if (verificaTre(somma)){
-    console.log ("il numero " + somma + " è pari, è la somma del tuo numero " + numeroUtente + " e il numero generato " + numeroAI);
-    risultato = "pari"
 
-}else{
-    console.log ("il numero " + somma + " è dispari, è la somma del tuo numero " + numeroUtente + " e il numero generato " + numeroAI)
-    risultato = "dispari"
+//SCIRVE NEL CONSOLE LOG LE OPERAZIONI 
+// var risultato
+
+if (verificaTre(somma)) {
+    console.log("il numero " + somma + " è pari, è la somma del tuo numero " + inserimentoUtente + " e il numero generato " + numeroAI);
+    var risultato = "pari"
+
+} else {
+    console.log("il numero " + somma + " è dispari, è la somma del tuo numero " + inserimentoUtente + " e il numero generato " + numeroAI)
+    var risultato = "dispari"
 }
 
-
-if (risultato===decisione){
+//ESITO PARTITA
+if (risultato === decisione) {
     console.log("HAI VINTO!!!!")
-}else{console.log("HAI PERSO!!!")}
+} else { console.log("HAI PERSO!!!") }

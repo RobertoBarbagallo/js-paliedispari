@@ -1,13 +1,22 @@
 var validita = false
 
-do {
-    var parolaDaVerificare = prompt("Inserisci la parola di cui vuoi verificare le palindromia");
+function verifica(){
+    do {
+        var parolaDaVerificare = prompt("Inserisci la parola di cui vuoi verificare le palindromia");
+    
+        var ricercaNumero = parseInt(parolaDaVerificare)
+    
+        if (Number.isNaN(ricercaNumero)) { validita = true };
+    
+    } while (!validita);
+    
+    var parolaDaVerificare = parolaDaVerificare.toLowerCase();
 
-    var ricercaNumero = parseInt(parolaDaVerificare)
+    return parolaDaVerificare
 
-    if (Number.isNaN(ricercaNumero)) { validita = true };
+}
 
-} while (!validita);
+var parolaDaVerificare = verifica(parolaDaVerificare)
 
  
 var lettereDellaParola = parolaDaVerificare.split("");

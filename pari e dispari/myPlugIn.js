@@ -22,7 +22,7 @@ function verificaDue(numeroUtente) {
     numeroUtente = parseInt(numeroUtente);
     var compreso = false
 
-    if (numeroUtente>=1 && numeroUtente<= 5) {
+    if (numeroUtente >= 1 && numeroUtente <= 5) {
         compreso = true
     } 
     return compreso
@@ -59,11 +59,7 @@ function verificaTre(sePari) {
 
 console.log("Il risultato della somma è pari: ", (verificaTre(somma)));
 
-
-
-//SCIRVE NEL CONSOLE LOG LE OPERAZIONI 
-// var risultato
-
+//SCRIVE NEL CONSOLE LOG LE OPERAZIONI 
 if (verificaTre(somma)) {
     console.log("il numero " + somma + " è pari, è la somma del tuo numero " + inserimentoUtente + " e il numero generato " + numeroAI);
     var risultato = "pari"
